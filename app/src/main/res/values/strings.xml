@@ -1,0 +1,22 @@
+
+<resources>
+    <string name="app_name">Заметки</string>
+    <string name="note_title_hint">Заголовок заметки</string>
+    <string name="high_priority">Высший приоритет</string>
+    <string name="note_description">Описание заметки</string>
+    <string name="search">Поиск</string>
+    <string name="add">Добавить</string>
+    <string name="sort">Сортировка</string>
+    <string name="not_implemented">Функция в разработке!</string>
+    <string name="delete">Удалить</string>
+    <string name="save">Сохранить</string>
+    <string name="notes">Заметки</string>
+    <string name="about">О приложении</string>
+    <string name="settings">Настройки</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="user_position">Никнейм</string>
+    <string name="application_description">Данное приложение было разработано с трудом.</string>
+    <string name="version">Версия</string>
+</resources>
