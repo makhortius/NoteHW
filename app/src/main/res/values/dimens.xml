@@ -11,4 +11,5 @@
     <dimen name="nav_header_name_size">24sp</dimen>
     <dimen name="nav_header_position">18sp</dimen>
     <dimen name="about_size">24sp</dimen>
+    <dimen name="about_3size">244sp</dimen>
 </resources>

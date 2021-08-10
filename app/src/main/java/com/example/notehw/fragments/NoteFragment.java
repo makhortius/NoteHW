@@ -133,4 +133,5 @@ public class NoteFragment extends Fragment implements Observer {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
