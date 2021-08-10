@@ -5,4 +5,5 @@ import com.example.notehw.entities.Note;
 @FunctionalInterface
 public interface OnItemSelectedListener {
     void onItemSelected(Note note);
+
 }
