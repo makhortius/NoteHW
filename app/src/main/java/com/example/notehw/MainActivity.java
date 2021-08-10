@@ -2,14 +2,19 @@ package com.example.notehw;
 
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -75,7 +80,13 @@ public class MainActivity extends AppCompatActivity {
         configureFragmentMap();
 
         configureFragments(currentFragmentEntry);
+
+        Button alert1 = findViewById(R.id.action_delete);
+        alert1.setOnClickListener(NoteFragment.clickAlertDialog);
+
     }
+
+
 
     private void initView() {
         Toolbar toolbar = initAndGetToolbar();

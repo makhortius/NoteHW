@@ -2,6 +2,8 @@ package com.example.notehw.fragments;
 
 
 import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,15 +14,19 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.example.notehw.MainActivity;
 import com.example.notehw.R;
 import com.example.notehw.entities.Note;
 import com.example.notehw.entities.Priority;
 import com.example.notehw.utils.Observer;
+import com.example.notehw.utils.Publisher;
 import com.example.notehw.utils.Utils;
 
 import java.util.Calendar;
@@ -39,6 +45,30 @@ public class NoteFragment extends Fragment implements Observer {
     private TextView createdAtTextView;
     private CheckBox priorityCheckBox;
     private EditText textEditText;
+
+    public View.OnClickListener clickAlertDialog = new View.OnClickListener(){
+        @Override
+        public void onClick(View view) {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(NoteFragment.this);
+
+            builder.setTitle(R.string.exclamation)
+
+                    .setMessage(R.string.press_button)
+                    .setIcon(R.mipmap.ic_launcher_round)
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.button,
+
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    Toast.makeText(NoteFragment.this, "Кнопка нажата", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
+            Toast.makeText(NoteFragment.this, "Диалог открыт", Toast.LENGTH_SHORT).show();
+        }
+    };
 
     public static NoteFragment newInstance() {
         return new NoteFragment();
@@ -90,6 +120,7 @@ public class NoteFragment extends Fragment implements Observer {
         createdAtTextView.setText(currentNote.getCreatedAtInFormat());
 
         initDatePicker(createdAtTextView);
+
     }
 
     private void initDatePicker(TextView createdAtTextView) {
@@ -127,11 +158,14 @@ public class NoteFragment extends Fragment implements Observer {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
 
-        if (itemId == R.id.action_delete || itemId == R.id.action_save) {
+        if (itemId == R.id.action_save ) {
             Utils.showToastShort(requireContext(), getString(R.string.not_implemented));
         }
 
+
         return super.onOptionsItemSelected(item);
     }
+
+
 
 }

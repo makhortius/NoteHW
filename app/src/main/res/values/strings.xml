@@ -20,4 +20,7 @@
     <string name="application_description">Данное приложение было разработано с трудом.</string>
     <string name="version">Версия</string>
     <string name="update">Изменить</string>
+    <string name="exclamation">Важное сообщение!</string>
+    <string name="press_button">Нажмите кнопку!</string>
+    <string name="button">КНОПКА</string>
 </resources>
